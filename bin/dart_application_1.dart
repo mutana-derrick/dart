@@ -1,4 +1,4 @@
-//import 'dart:io';
+import 'dart:io';
 //import 'dart:math';
 
 void main(List<String> arguments) {
@@ -8,13 +8,16 @@ void main(List<String> arguments) {
   stringInter();
   runTimeType();
   grade(); 
-  */
 
-//printing with named parameters
+  //printing with named parameters
   print(greet(age: 10, name: "John"));
 
   //printing with optional age
   print(greet(name: "John"));
+  
+  */
+
+  checkPunctuation();
 }
 
 ///getting a name from the user  and print it
@@ -94,6 +97,25 @@ void grade() {
 
     default:
       print("Error!");
+  }
+}
+
+//assignment on string
+
+void checkPunctuation() {
+  print("Type a sentence!");
+
+  String sentence = stdin.readLineSync() ?? "can't be null";
+
+  //String sentence = "how are you.";
+
+  String trimmedsentence = sentence.trim();
+  int length = trimmedsentence.length;
+
+  if (trimmedsentence.endsWith(".")) {
+    print("your sentence is well punctuated and has $length chars ");
+  } else {
+    print("Your Sentence is not well punctuated");
   }
 }
 
